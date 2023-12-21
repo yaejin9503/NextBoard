@@ -107,13 +107,33 @@ body {
   overflow-x: hidden;
 }
 
-
 .flex { 
   display: flex;
 }
 
+.block{ 
+  display: block;
+}
+
+.justi-align-center{ 
+  justify-content: center;
+  align-items: center;
+}
+
+.mt40{ 
+  margin-top:40px;
+}
+
 .mb16{ 
   margin-bottom: 16px;
+}
+
+.mb80{ 
+  margin-bottom: 80px; 
+}
+
+.mb120{ 
+  margin-bottom: 120px; 
 }
 
 .ml16{ 
@@ -128,6 +148,10 @@ body {
   margin-right: 24px;
 }
 
+.mr40{ 
+  margin-right: 40px;
+}
+
 .pd1416{ 
   padding: 14px 16px;
 }
@@ -140,6 +164,57 @@ body {
   padding: 18px;
 }
 
+.wd5per{ 
+  width: 5%;
+}
+
+.wd8per{ 
+  width: 8%;
+}
+
+.wd10per{ 
+  width: 10%;
+}
+
+.wd20per{ 
+  width: 20%;
+} 
+
+.wd30per{ 
+  width: 30%; 
+}
+
+.wd40per{ 
+  width: 40%;
+}
+
+.wd50per{ 
+  width: 50%;
+}
+
+.wd60per{ 
+  width: 60%;
+}
+
+.wd70per{ 
+  width: 70%;
+}
+
+.wd75per{ 
+  width: 75%;
+}
+
+.wd80per{ 
+  width: 80%;
+}
+
+.wd90per{ 
+  width: 90%;
+}
+
+.wd100per{ 
+  width: 100%;
+}
 
 .writerWrapperWidth{ 
   width: 50%;
@@ -166,6 +241,38 @@ body {
   margin-top: 80px;
 }
 
+.board-userName{ 
+  color: var(--Black, #000);
+  font-family: Noto Sans CJK KR;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.board-createdAt{ 
+  color: var(--Gray-3, #828282);
+  font-family: Noto Sans CJK KR;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.yellowfont{ 
+  color: var(--Main, #FFD600);
+}
+
+.greyfont{ 
+  color: var(--Gray-3, #828282);
+}
+
 .error{ 
   color : red; 
+}
+
+.thumbs{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

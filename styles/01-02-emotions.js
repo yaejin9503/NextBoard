@@ -24,6 +24,30 @@ export const Container = styled.div`
   align-content: center;
   justify-content: center;
 `
+
+export const BoardContentsContainer = styled.div`
+  display: flex;
+  align-content: center;
+  justify-content: center;
+`
+
+export const BoardDetailBtContainer = styled.div`
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 80px;
+`
+
+export const BoardDetailBtWrapper = styled.div`
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: var(--White, #FFF);
+  width: 1200px;
+`
+
 export const Wrapper = styled.div`
   max-width: 1200px;
   display: flex;
@@ -92,3 +116,39 @@ export const UploadBtn = styled.button`
   line-height: normal;
   border: none;
 `
+
+export const BoardTopUserInfo = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #BDBDBD;
+  padding-bottom: 20px;
+`
+
+export const BoardBottomSection = styled.section`
+  padding: 80px 0px; 
+`
+
+export const BoardDetailTitle = styled.h1`
+  font-size: 36px;
+  margin-bottom: 40px;
+`
+
+export const BoardDetailContents = styled.div`
+  margin-bottom: 160px;
+`
+
+export const BoardBtn = styled.button`
+  display: inline-flex;
+  height: 45px;
+  padding: 14px 60px;
+  border: 1px solid var(--Gray-4, #BDBDBD);
+  background: var(--White, #FFF);
+  margin-right: 24px;
+`
+
+export const BoardDetailBtnWrap = styled.div`
+  margin-bottom: 80px; 
+`
+

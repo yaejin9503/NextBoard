@@ -63,10 +63,12 @@ export default function EmotionPage(){
                 message: '제목을 입력해주세요.'
               }
               })} className="inputBoxWidth" placeholder="제목을 작성해주세요." />
-           
+            <p class="error">{errors.title?.message}</p>
+
             <Title>내용</Title>
             <TextAreaContents {...register("contents" , { required: true })} placeholder="내용을 작성해주세요."/>
-          
+            <p class="error">{errors.contents?.message}</p>
+
             <div>
               <Title>주소</Title>
               <div className="flex mb16">
@@ -77,6 +79,7 @@ export default function EmotionPage(){
                     message: "최대 길이는 5글자 입니다."
                   } 
                 })} type="text" className="postNumInput" placeholder="07250"/>
+                <p class="error">{errors.zipCode?.message}</p>
                 <BlackBtn className="pd1416 ml16">우편번호 검색</BlackBtn>
               </div>
               <div>
