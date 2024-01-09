@@ -41,7 +41,7 @@ export const BoardDetailBtContainer = styled.div`
 export const BoardDetailBtWrapper = styled.div`
   max-width: 1200px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: var(--White, #FFF);

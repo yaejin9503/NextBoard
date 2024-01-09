@@ -216,6 +216,10 @@ body {
   width: 100%;
 }
 
+.borderbt{ 
+  border-bottom: 1px solid #EFEFEF;
+}
+
 .writerWrapperWidth{ 
   width: 50%;
   margin-right: 7px;

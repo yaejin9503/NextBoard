@@ -1,19 +1,35 @@
 import { useState } from 'react';
-import { router } from 'next/router'
-import Image from 'next/image'
+import { useRouter } from 'next/router';
+import { useQuery, gql } from "@apollo/client"; 
+
+import Image from 'next/image';
+
+const FETCH_BOARD = gql`
+    query fetchBoard($number: Int){
+      fetchBoard(number:$number){
+        number, 
+        writer,
+        title,
+        contents,
+        createdAt
+      }
+    }`
 
 import {
   Wrapper, BoardContentsContainer, BoardTopUserInfo, BoardBottomSection,
   BoardDetailTitle, BoardDetailContents, BoardDetailBtContainer,
   BoardBtn, BoardDetailBtWrapper, BoardDetailBtnWrap
-} from "../../../../../styles/01-02-emotions";
-import { useRouter } from 'next/router';
+} from "../../../../styles/01-02-emotions";
 
 export default function BoardDetail() {
-
   const router = useRouter();
-
-
+  // console.log(router.query.id);
+  const { data } = useQuery(FETCH_BOARD, {
+    variables : { 
+      number: Number(router.query.id)
+    }
+  });
+  
   return (
     <div>
       <BoardContentsContainer>
@@ -27,8 +43,8 @@ export default function BoardDetail() {
             />
           </div>
           <div className="wd80per">
-            <p className="board-userName">노원두</p>
-            <p className="board-createdAt">Date: 2021.02.18</p>
+            <p className="board-userName">{data?.fetchBoard?.writer}</p>
+            <p className="board-createdAt">Date: {data?.fetchBoard?.createdAt}</p>
           </div>
           <div className="wd8per">
             <Image
@@ -40,13 +56,13 @@ export default function BoardDetail() {
           <div className="wd8per">
             <Image
               src="/imgs/ic_location_on-32px.png"
-              width={32}
+              width={32}  
               height={32}
             />
           </div>
         </BoardTopUserInfo>
         <BoardBottomSection>
-            <BoardDetailTitle>게시글 제목입니다.</BoardDetailTitle>
+            <BoardDetailTitle>{data?.fetchBoard?.title}</BoardDetailTitle>
             <BoardDetailContents> 
               <Image
                 src="/imgs/boardImg.png"
@@ -54,7 +70,7 @@ export default function BoardDetail() {
                 height={480}
               />
               <p className="mt40 mb120">
-              가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+              {data?.fetchBoard?.contents}
               </p>
               <div className="flex justi-align-center">
                 <Image
@@ -92,6 +108,13 @@ export default function BoardDetail() {
           <BoardBtn>수정하기</BoardBtn>
           <BoardBtn>삭제하기</BoardBtn>
         </BoardDetailBtnWrap>
+        {/* <div> 
+          <div>댓글</div> 
+          <div>
+            <input type="text" /> 
+            <input type="text" />
+          </div>
+        </div> */}
       </BoardDetailBtWrapper>
     </BoardDetailBtContainer>
   </div>
